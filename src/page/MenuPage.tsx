@@ -9,7 +9,7 @@ import {
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardAction, CardContent } from "@/components/ui/card";
 import {
   Carousel,
   CarouselContent,
@@ -21,7 +21,6 @@ import {
   Drawer,
   DrawerClose,
   DrawerContent,
-  DrawerDescription,
   DrawerFooter,
   DrawerHeader,
   DrawerTitle,
@@ -29,7 +28,7 @@ import {
 } from "@/components/ui/drawer";
 import { Separator } from "@/components/ui/separator";
 import { Toggle } from "@/components/ui/toggle";
-import { Minus, Plus, ShoppingCart } from "lucide-react";
+import { Minus, Plus, ShoppingCart, Trash } from "lucide-react";
 
 export const MenuPage = () => {
   return (
@@ -120,41 +119,52 @@ export const MenuPage = () => {
         <DrawerContent>
           <div className="mx-auto w-full max-w-sm">
             <DrawerHeader>
-              <DrawerTitle>Move Goal</DrawerTitle>
-              <DrawerDescription>
-                Set your daily activity goal.
-              </DrawerDescription>
+              <DrawerTitle>Mis Pedidos</DrawerTitle>
             </DrawerHeader>
             <div className="p-4 pb-0">
-              <div className="flex items-center justify-center space-x-2">
-                <Button
-                  variant="outline"
-                  size="icon"
-                  className="h-8 w-8 shrink-0 rounded-full"
-                >
-                  <Minus />
-                  <span className="sr-only">Decrease</span>
-                </Button>
-                <div className="flex-1 text-center">
-                  <div className="text-muted-foreground text-[0.70rem] uppercase">
-                    Calories/day
-                  </div>
-                </div>
-                <Button
-                  variant="outline"
-                  size="icon"
-                  className="h-8 w-8 shrink-0 rounded-full"
-                >
-                  <Plus />
-                  <span className="sr-only">Increase</span>
-                </Button>
+              <div className="flex flex-col items-center justify-center space-x-2 gap-5">
+                <Card>
+                  <CardContent className="flex gap-3">
+                    <p>X3</p>
+                    <p>Bosque Encantado IPA</p>
+                    <p>$7500</p>
+                    <CardAction>
+                      <Button variant={"destructive"}>
+                        <Trash />
+                      </Button>
+                    </CardAction>
+                  </CardContent>
+                </Card>
+                <Card>
+                  <CardContent className="flex gap-3">
+                    <p>X3</p>
+                    <p>Bosque Encantado IPA</p>
+                    <p>$7500</p>
+                    <CardAction>
+                      <Button variant={"destructive"}>
+                        <Trash />
+                      </Button>
+                    </CardAction>
+                  </CardContent>
+                </Card>
+                <Card>
+                  <CardContent className="flex gap-3">
+                    <p>X3</p>
+                    <p>Bosque Encantado IPA</p>
+                    <p>$7500</p>
+                    <CardAction>
+                      <Button variant={"destructive"}>
+                        <Trash />
+                      </Button>
+                    </CardAction>
+                  </CardContent>
+                </Card>
               </div>
-              <div className="mt-3 h-[120px]"></div>
             </div>
             <DrawerFooter>
-              <Button>Submit</Button>
+              <Button>Enviar Pedido</Button>
               <DrawerClose asChild>
-                <Button variant="outline">Cancel</Button>
+                <Button variant="outline">Volver</Button>
               </DrawerClose>
             </DrawerFooter>
           </div>
