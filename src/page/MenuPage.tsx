@@ -31,6 +31,7 @@ import { Toggle } from "@/components/ui/toggle";
 import { Minus, Plus, ShoppingCart, Trash } from "lucide-react";
 
 export const MenuPage = () => {
+
   return (
     <section className="flex flex-col min-h-screen p-4 gap-8">
       <div className="flex gap-4">
