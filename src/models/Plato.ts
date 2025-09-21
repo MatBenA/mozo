@@ -3,7 +3,7 @@ import type { Ingrediente } from "./Ingrediente";
 export interface Plato {
   id: number;
   nombre: string;
-  descipcion: string;
+  descripcion: string;
   precio: number;
   ingredientes: Ingrediente[];
   img: string;

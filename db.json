@@ -7,7 +7,7 @@
         {
           "id": 1,
           "nombre": "Milanesa con Papas",
-          "descipcion": "Clásica milanesa de carne acompañada con papas fritas.",
+          "descripcion": "Clásica milanesa de carne acompañada con papas fritas.",
           "precio": 4500,
           "ingredientes": [
             { "id": 1, "nombre": "Carne", "dietasCompatibles": [] },
@@ -19,7 +19,7 @@
         {
           "id": 2,
           "nombre": "Pizza Muzza",
-          "descipcion": "Pizza de muzzarella con salsa de tomate casera.",
+          "descripcion": "Pizza de muzzarella con salsa de tomate casera.",
           "precio": 3200,
           "ingredientes": [
             { "id": 4, "nombre": "Masa de pizza", "dietasCompatibles": ["vegetariano"] },
@@ -31,7 +31,7 @@
         {
           "id": 3,
           "nombre": "Hamburguesa Doble",
-          "descipcion": "Hamburguesa doble carne con cheddar y panceta.",
+          "descripcion": "Hamburguesa doble carne con cheddar y panceta.",
           "precio": 5000,
           "ingredientes": [
             { "id": 7, "nombre": "Carne vacuna", "dietasCompatibles": [] },
@@ -43,7 +43,7 @@
         {
           "id": 4,
           "nombre": "Ensalada César",
-          "descipcion": "Ensalada fresca con pollo grillado, crutones y aderezo César.",
+          "descripcion": "Ensalada fresca con pollo grillado, crutones y aderezo César.",
           "precio": 2800,
           "ingredientes": [
             { "id": 10, "nombre": "Lechuga", "dietasCompatibles": ["vegano", "vegetariano", "sin gluten"] },
@@ -55,7 +55,7 @@
         {
           "id": 5,
           "nombre": "Tallarines con Salsa Boloñesa",
-          "descipcion": "Pasta fresca con salsa de tomate y carne molida.",
+          "descripcion": "Pasta fresca con salsa de tomate y carne molida.",
           "precio": 3500,
           "ingredientes": [
             { "id": 13, "nombre": "Pasta", "dietasCompatibles": ["vegetariano"] },
@@ -73,7 +73,7 @@
         {
           "id": 6,
           "nombre": "Agua Mineral",
-          "descipcion": "Agua mineral sin gas.",
+          "descripcion": "Agua mineral sin gas.",
           "precio": 800,
           "ingredientes": [
             { "id": 16, "nombre": "Agua", "dietasCompatibles": ["vegano", "vegetariano", "sin gluten"] }
@@ -83,7 +83,7 @@
         {
           "id": 7,
           "nombre": "Coca Cola",
-          "descipcion": "Gaseosa clásica sabor cola.",
+          "descripcion": "Gaseosa clásica sabor cola.",
           "precio": 1200,
           "ingredientes": [
             { "id": 17, "nombre": "Jarabe cola", "dietasCompatibles": ["vegano", "vegetariano", "sin gluten"] },
@@ -94,7 +94,7 @@
         {
           "id": 8,
           "nombre": "Cerveza IPA",
-          "descipcion": "Cerveza artesanal estilo IPA.",
+          "descripcion": "Cerveza artesanal estilo IPA.",
           "precio": 1800,
           "ingredientes": [
             { "id": 19, "nombre": "Cebada", "dietasCompatibles": ["vegano"] },
@@ -105,7 +105,7 @@
         {
           "id": 9,
           "nombre": "Vino Tinto Malbec",
-          "descipcion": "Copa de vino tinto Malbec argentino.",
+          "descripcion": "Copa de vino tinto Malbec argentino.",
           "precio": 2500,
           "ingredientes": [
             { "id": 21, "nombre": "Uva Malbec", "dietasCompatibles": ["vegano", "vegetariano", "sin gluten"] }
@@ -115,7 +115,7 @@
         {
           "id": 10,
           "nombre": "Jugo de Naranja",
-          "descipcion": "Jugo de naranja natural recién exprimido.",
+          "descripcion": "Jugo de naranja natural recién exprimido.",
           "precio": 1500,
           "ingredientes": [
             { "id": 22, "nombre": "Naranja", "dietasCompatibles": ["vegano", "vegetariano", "sin gluten"] }
@@ -131,7 +131,7 @@
         {
           "id": 11,
           "nombre": "Helado de Chocolate",
-          "descipcion": "Helado artesanal de chocolate.",
+          "descripcion": "Helado artesanal de chocolate.",
           "precio": 2000,
           "ingredientes": [
             { "id": 23, "nombre": "Chocolate", "dietasCompatibles": ["vegetariano"] },
@@ -142,7 +142,7 @@
         {
           "id": 12,
           "nombre": "Flan Casero",
-          "descipcion": "Flan casero con caramelo.",
+          "descripcion": "Flan casero con caramelo.",
           "precio": 1800,
           "ingredientes": [
             { "id": 25, "nombre": "Huevo", "dietasCompatibles": [] },
@@ -154,7 +154,7 @@
         {
           "id": 13,
           "nombre": "Brownie",
-          "descipcion": "Brownie húmedo de chocolate.",
+          "descripcion": "Brownie húmedo de chocolate.",
           "precio": 2200,
           "ingredientes": [
             { "id": 28, "nombre": "Harina", "dietasCompatibles": ["vegetariano"] },
@@ -166,7 +166,7 @@
         {
           "id": 14,
           "nombre": "Cheesecake",
-          "descipcion": "Cheesecake de frutos rojos.",
+          "descripcion": "Cheesecake de frutos rojos.",
           "precio": 2400,
           "ingredientes": [
             { "id": 31, "nombre": "Queso crema", "dietasCompatibles": ["vegetariano"] },
@@ -178,7 +178,7 @@
         {
           "id": 15,
           "nombre": "Tiramisú",
-          "descipcion": "Clásico postre italiano con café y mascarpone.",
+          "descripcion": "Clásico postre italiano con café y mascarpone.",
           "precio": 2600,
           "ingredientes": [
             { "id": 34, "nombre": "Café", "dietasCompatibles": ["vegano", "vegetariano", "sin gluten"] },

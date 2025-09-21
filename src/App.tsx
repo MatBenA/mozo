@@ -1,5 +1,5 @@
 import { ThemeProvider } from "./components/theme-provider";
-import { MenuPage } from "./page/MenuPage";
+import { MenuPage } from "./pages/MenuPage";
 
 function App() {
   return (
