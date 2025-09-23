@@ -18,7 +18,7 @@ export const useMenuStore = create<MenuState>((set) => ({
     set({ loading: true, error: null });
     try {
       const res = await axios.get<Categoria[]>(
-        "http://localhost:4000/categorias"
+        "http://192.168.100.5:4000/categorias"
       );
       set({ menu: res.data, loading: false });
     } catch (err) {
