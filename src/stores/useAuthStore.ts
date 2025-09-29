@@ -35,7 +35,7 @@ export const useAuthStore = create<AuthState>()(
           ) {
             const user: AuthUser = {
               id: "1",
-              nombre: "Carlos Rodríguez",
+              nombre: "Matías Adrián",
               email: credentials.email,
               token: "mock-jwt-token",
             };

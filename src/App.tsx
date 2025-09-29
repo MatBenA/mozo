@@ -18,21 +18,22 @@ function App() {
           <Routes>
             <Route 
               path="/login" 
-              element={
-                isAuthenticated ? <Navigate to="/" replace /> : <LoginForm />
-              } 
+              element={<LoginForm />} 
             />
             <Route 
               path="/" 
+              element={<MenuPage />} 
+            />
+            <Route 
+              path="/dashboard" 
               element={
                 isAuthenticated ? <PedidosDashboard /> : <Navigate to="/login" replace />
               } 
             />
             <Route 
               path="*" 
-              element={<Navigate to={isAuthenticated ? "/" : "/login"} replace />} 
+              element={<Navigate to="/" replace />} 
             />
-            <Route path='/menu' element={<MenuPage/>}/>
           </Routes>
         </div>
       </Router>

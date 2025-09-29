@@ -3,25 +3,42 @@ import { useState } from 'react';
 import { Eye, EyeOff, User, Lock, ChefHat, Loader2 } from 'lucide-react';
 import { Button } from '../ui/button';
 import { useAuthStore } from '../../stores/useAuthStore';
+import { useNavigate } from 'react-router-dom';
+
+const pass = "123456"
+const emailuser = "mozo@restaurant.com"
 
 export const LoginForm = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
-    email: 'mozo@restaurant.com', // Pre-filled for demo
-    password: '123456'
+    email: '', // Pre-filled for demo
+    password: ''
   });
+  const [loginError, setLoginError] = useState('');
 
   const { login, isLoading, error, clearError } = useAuthStore();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     clearError();
+    setLoginError('');
+    
+    // Validar credenciales
+    if (formData.email !== emailuser || formData.password !== pass) {
+      setLoginError('Email o contraseña incorrectos');
+      return;
+    }
+    
+    // Si las credenciales son correctas, proceder con el login
     await login(formData);
+    navigate("/dashboard")
   };
 
   const handleInputChange = (field: string, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }));
     if (error) clearError();
+    if (loginError) setLoginError('');
   };
 
   return (
@@ -95,10 +112,10 @@ export const LoginForm = () => {
             </div>
 
             {/* Error Message */}
-            {error && (
+            {(error || loginError) && (
               <div className="p-4 bg-red-50 dark:bg-red-900/20 border-2 border-red-200 dark:border-red-800 rounded-2xl">
                 <p className="text-red-700 dark:text-red-400 text-sm font-medium text-center">
-                  {error}
+                  {loginError || error}
                 </p>
               </div>
             )}
