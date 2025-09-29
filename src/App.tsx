@@ -1,10 +1,41 @@
-import { ThemeProvider } from "./components/theme-provider";
-import { MenuPage } from "./pages/MenuPage";
+// src/App.tsx
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { ThemeProvider } from './components/theme-provider';
+import { useAuthStore } from './stores/useAuthStore';
+import { LoginForm } from './components/auth/LoginForm';
+import { PedidosDashboard } from './components/pedidos/PedidosDashboard';
+import { Navbar } from './components/layout/Navbar';
+import { MenuPage } from './pages';
 
 function App() {
+  const { isAuthenticated } = useAuthStore();
+
   return (
-    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-      <MenuPage />
+    <ThemeProvider defaultTheme="light" storageKey="mozo-ui-theme">
+      <Router>
+        <div className="min-h-screen bg-background">
+          {isAuthenticated && <Navbar />}
+          <Routes>
+            <Route 
+              path="/login" 
+              element={
+                isAuthenticated ? <Navigate to="/" replace /> : <LoginForm />
+              } 
+            />
+            <Route 
+              path="/" 
+              element={
+                isAuthenticated ? <PedidosDashboard /> : <Navigate to="/login" replace />
+              } 
+            />
+            <Route 
+              path="*" 
+              element={<Navigate to={isAuthenticated ? "/" : "/login"} replace />} 
+            />
+            <Route path='/menu' element={<MenuPage/>}/>
+          </Routes>
+        </div>
+      </Router>
     </ThemeProvider>
   );
 }

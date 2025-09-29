@@ -10,7 +10,7 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "./ui/drawer";
-import type { Item } from "@/models/Item";
+import type { Item } from "@/types/Item";
 
 interface Props {
   order: Item[];

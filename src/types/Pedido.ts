@@ -13,4 +13,5 @@ export interface Pedido {
   mesa: number;
   estado: Estado;
   items: Item[];
+  time: Date;
 }

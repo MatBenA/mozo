@@ -1,4 +1,4 @@
-import type { Item } from "@/models/Item";
+import type { Item } from "@/types/Item";
 import { useMenuStore } from "@/stores/useMenuStore";
 import { useState } from "react";
 

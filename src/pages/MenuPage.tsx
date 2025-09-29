@@ -5,7 +5,7 @@ import { useMenu } from "@/hooks/useMenu";
 import { useOrder } from "@/hooks/useOrder";
 import { ChefHat, Leaf, Shield, Milk } from "lucide-react";
 
-export const MenuPage = () => {
+const MenuPage = () => {
   useMenu();
   const { order, addItem, removeItem } = useOrder();
 
@@ -92,3 +92,5 @@ export const MenuPage = () => {
     </div>
   );
 };
+
+export default MenuPage; 

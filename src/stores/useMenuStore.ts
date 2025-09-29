@@ -1,4 +1,4 @@
-import type { Categoria } from "@/models/Categoria";
+import type { Categoria } from "@/types/Categoria";
 import type { AxiosError } from "axios";
 import axios from "axios";
 import { create } from "zustand";
@@ -18,7 +18,7 @@ export const useMenuStore = create<MenuState>((set) => ({
     set({ loading: true, error: null });
     try {
       const res = await axios.get<Categoria[]>(
-        "http://192.168.100.5:4000/categorias"
+        "http://192.168.100.5:3000/categorias"
       );
       set({ menu: res.data, loading: false });
     } catch (err) {
