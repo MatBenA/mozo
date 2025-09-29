@@ -1,5 +1,5 @@
 import { Card, CardHeader } from "@/components/ui/card";
-import { Bell, User, LogOut, Filter, Timer } from 'lucide-react';
+import { User, Timer } from 'lucide-react';
 
 const ListaPedidosPage = () => {
   return (

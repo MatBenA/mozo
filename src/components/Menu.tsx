@@ -10,14 +10,6 @@ import {
   AlertDialogAction,
 } from "./ui/alert-dialog";
 import { Button } from "./ui/button";
-import { CardContent, Card } from "./ui/card";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselPrevious,
-  CarouselNext,
-} from "./ui/carousel";
 import { Separator } from "./ui/separator";
 import { useMenuStore } from "@/stores/useMenuStore";
 import { useState } from "react";
@@ -173,7 +165,7 @@ export const Menu = ({ addItem }: Props) => {
                   <div className="text-center mb-6">
                     <div className="text-sm text-gray-600 dark:text-gray-400 mb-1">Total</div>
                     <div className="text-2xl font-bold text-primary">
-                      ${((parseFloat(plato.precio) || 12.99) * getQuantity(plato.id)).toFixed(2)}
+                      ${((plato.precio || 12.99) * getQuantity(plato.id)).toFixed(2)}
                     </div>
                   </div>
 
