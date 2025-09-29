@@ -3,7 +3,7 @@ import { Menu } from "@/components/Menu";
 import { Toggle } from "@/components/ui/toggle";
 import { useMenu } from "@/hooks/useMenu";
 import { useOrder } from "@/hooks/useOrder";
-import { ChefHat, Leaf, Shield, Milk } from "lucide-react";
+import { Leaf, Shield, Milk } from "lucide-react";
 
 const MenuPage = () => {
   useMenu();
