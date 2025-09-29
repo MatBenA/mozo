@@ -1,12 +1,204 @@
+
+// src/stores/useMenuStore.ts
 import type { Categoria } from "@/types/Categoria";
-import type { AxiosError } from "axios";
-import axios from "axios";
 import { create } from "zustand";
+
+export const menuData: Categoria[] = [
+  {
+    id: 1,
+    nombre: "Platos",
+    platos: [
+      {
+        id: 1,
+        nombre: "Milanesa con Papas",
+        descripcion: "Clásica milanesa de carne acompañada con papas fritas.",
+        precio: 4500,
+        ingredientes: [
+          { id: 1, nombre: "Carne", dietasCompatibles: [] },
+          { id: 2, nombre: "Pan rallado", dietasCompatibles: [] },
+          { id: 3, nombre: "Papas", dietasCompatibles: ["vegetariano", "sin gluten"] }
+        ],
+        img: "/img/platos/milanesa_papas.jpg"
+      },
+      {
+        id: 2,
+        nombre: "Pizza Muzza",
+        descripcion: "Pizza de muzzarella con salsa de tomate casera.",
+        precio: 3200,
+        ingredientes: [
+          { id: 4, nombre: "Masa de pizza", dietasCompatibles: ["vegetariano"] },
+          { id: 5, nombre: "Queso mozzarella", dietasCompatibles: ["vegetariano"] },
+          { id: 6, nombre: "Tomate", dietasCompatibles: ["vegano", "vegetariano", "sin gluten"] }
+        ],
+        img: "/img/platos/pizza_muzza.jpg"
+      },
+      {
+        id: 3,
+        nombre: "Hamburguesa Doble",
+        descripcion: "Hamburguesa doble carne con cheddar y panceta.",
+        precio: 5000,
+        ingredientes: [
+          { id: 7, nombre: "Carne vacuna", dietasCompatibles: [] },
+          { id: 8, nombre: "Queso cheddar", dietasCompatibles: [] },
+          { id: 9, nombre: "Panceta", dietasCompatibles: [] }
+        ],
+        img: "/img/platos/hamburguesa_doble.jpg"
+      },
+      {
+        id: 4,
+        nombre: "Ensalada César",
+        descripcion: "Ensalada fresca con pollo grillado, crutones y aderezo César.",
+        precio: 2800,
+        ingredientes: [
+          { id: 10, nombre: "Lechuga", dietasCompatibles: ["vegano", "vegetariano", "sin gluten"] },
+          { id: 11, nombre: "Pollo", dietasCompatibles: [] },
+          { id: 12, nombre: "Queso parmesano", dietasCompatibles: ["vegetariano"] }
+        ],
+        img: "/img/platos/ensalada_cesar.jpg"
+      },
+      {
+        id: 5,
+        nombre: "Tallarines con Salsa Boloñesa",
+        descripcion: "Pasta fresca con salsa de tomate y carne molida.",
+        precio: 3500,
+        ingredientes: [
+          { id: 13, nombre: "Pasta", dietasCompatibles: ["vegetariano"] },
+          { id: 14, nombre: "Tomate", dietasCompatibles: ["vegano", "vegetariano", "sin gluten"] },
+          { id: 15, nombre: "Carne molida", dietasCompatibles: [] }
+        ],
+        img: "/img/platos/tallarines_boloniesa.jpg"
+      }
+    ]
+  },
+  {
+    id: 2,
+    nombre: "Bebidas",
+    platos: [
+      {
+        id: 6,
+        nombre: "Agua Mineral",
+        descripcion: "Agua mineral sin gas.",
+        precio: 800,
+        ingredientes: [
+          { id: 16, nombre: "Agua", dietasCompatibles: ["vegano", "vegetariano", "sin gluten"] }
+        ],
+        img: "/img/bebidas/agua.jpg"
+      },
+      {
+        id: 7,
+        nombre: "Coca Cola",
+        descripcion: "Gaseosa clásica sabor cola.",
+        precio: 1200,
+        ingredientes: [
+          { id: 17, nombre: "Jarabe cola", dietasCompatibles: ["vegano", "vegetariano", "sin gluten"] },
+          { id: 18, nombre: "Agua carbonatada", dietasCompatibles: ["vegano", "vegetariano", "sin gluten"] }
+        ],
+        img: "/img/bebidas/cocacola.jpg"
+      },
+      {
+        id: 8,
+        nombre: "Cerveza IPA",
+        descripcion: "Cerveza artesanal estilo IPA.",
+        precio: 1800,
+        ingredientes: [
+          { id: 19, nombre: "Cebada", dietasCompatibles: ["vegano"] },
+          { id: 20, nombre: "Lúpulo", dietasCompatibles: ["vegano", "vegetariano", "sin gluten"] }
+        ],
+        img: "/img/bebidas/ipa.jpg"
+      },
+      {
+        id: 9,
+        nombre: "Vino Tinto Malbec",
+        descripcion: "Copa de vino tinto Malbec argentino.",
+        precio: 2500,
+        ingredientes: [
+          { id: 21, nombre: "Uva Malbec", dietasCompatibles: ["vegano", "vegetariano", "sin gluten"] }
+        ],
+        img: "/img/bebidas/malbec.jpg"
+      },
+      {
+        id: 10,
+        nombre: "Jugo de Naranja",
+        descripcion: "Jugo de naranja natural recién exprimido.",
+        precio: 1500,
+        ingredientes: [
+          { id: 22, nombre: "Naranja", dietasCompatibles: ["vegano", "vegetariano", "sin gluten"] }
+        ],
+        img: "/img/bebidas/jugo_naranja.jpg"
+      }
+    ]
+  },
+  {
+    id: 3,
+    nombre: "Postres",
+    platos: [
+      {
+        id: 11,
+        nombre: "Helado de Chocolate",
+        descripcion: "Helado artesanal de chocolate.",
+        precio: 2000,
+        ingredientes: [
+          { id: 23, nombre: "Chocolate", dietasCompatibles: ["vegetariano"] },
+          { id: 24, nombre: "Leche", dietasCompatibles: ["vegetariano"] }
+        ],
+        img: "/img/postres/helado_chocolate.jpg"
+      },
+      {
+        id: 12,
+        nombre: "Flan Casero",
+        descripcion: "Flan casero con caramelo.",
+        precio: 1800,
+        ingredientes: [
+          { id: 25, nombre: "Huevo", dietasCompatibles: [] },
+          { id: 26, nombre: "Leche", dietasCompatibles: ["vegetariano"] },
+          { id: 27, nombre: "Azúcar", dietasCompatibles: ["vegano", "vegetariano", "sin gluten"] }
+        ],
+        img: "/img/postres/flan.jpg"
+      },
+      {
+        id: 13,
+        nombre: "Brownie",
+        descripcion: "Brownie húmedo de chocolate.",
+        precio: 2200,
+        ingredientes: [
+          { id: 28, nombre: "Harina", dietasCompatibles: ["vegetariano"] },
+          { id: 29, nombre: "Chocolate", dietasCompatibles: ["vegetariano"] },
+          { id: 30, nombre: "Huevo", dietasCompatibles: [] }
+        ],
+        img: "/img/postres/brownie.jpg"
+      },
+      {
+        id: 14,
+        nombre: "Cheesecake",
+        descripcion: "Cheesecake de frutos rojos.",
+        precio: 2400,
+        ingredientes: [
+          { id: 31, nombre: "Queso crema", dietasCompatibles: ["vegetariano"] },
+          { id: 32, nombre: "Galleta", dietasCompatibles: ["vegetariano"] },
+          { id: 33, nombre: "Frutos rojos", dietasCompatibles: ["vegano", "vegetariano", "sin gluten"] }
+        ],
+        img: "/img/postres/cheesecake.jpg"
+      },
+      {
+        id: 15,
+        nombre: "Tiramisú",
+        descripcion: "Clásico postre italiano con café y mascarpone.",
+        precio: 2600,
+        ingredientes: [
+          { id: 34, nombre: "Café", dietasCompatibles: ["vegano", "vegetariano", "sin gluten"] },
+          { id: 35, nombre: "Queso mascarpone", dietasCompatibles: ["vegetariano"] },
+          { id: 36, nombre: "Huevo", dietasCompatibles: [] }
+        ],
+        img: "/img/postres/tiramisu.jpg"
+      }
+    ]
+  }
+];
 
 interface MenuState {
   menu: Categoria[];
   loading: boolean;
-  error: AxiosError | null;
+  error: Error | null;
   fetchMenu: () => Promise<void>;
 }
 
@@ -14,15 +206,24 @@ export const useMenuStore = create<MenuState>((set) => ({
   menu: [],
   loading: false,
   error: null,
+  
   fetchMenu: async () => {
     set({ loading: true, error: null });
+    
     try {
-      const res = await axios.get<Categoria[]>(
-        "http://192.168.100.5:3000/categorias"
-      );
-      set({ menu: res.data, loading: false });
+      // Simular una llamada asíncrona para mantener la consistencia
+      // con el comportamiento anterior
+      await new Promise(resolve => setTimeout(resolve, 500));
+      
+      set({ 
+        menu: menuData, 
+        loading: false 
+      });
     } catch (err) {
-      set({ error: err as AxiosError, loading: false });
+      set({ 
+        error: err instanceof Error ? err : new Error('Error al cargar el menú'),
+        loading: false 
+      });
     }
   },
 }));
